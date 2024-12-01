@@ -1,4 +1,3 @@
-from pyspark.sql.functions import udf
 from urllib.parse import urlparse
 from user_agents import parse
 
