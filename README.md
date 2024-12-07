@@ -40,7 +40,7 @@ spark/
 
 ## Cách sử dụng
   ### Cách chạy với kafka
-   > **[Link Kafka](https://github.com/pKietDE/kafka-postgres)**
+  + [Link Kafka](https://github.com/pKietDE/kafka-postgres) 
       > [!NOTE]
       > 1. Cài đặt biến môi trường đầy đủ cho file kafka_config.conf
       > 2. Thêm các thư viện cần thiết trong file requirements.txt
@@ -52,7 +52,7 @@ spark/
 
 
   ### Cách chạy với spark-submit
-   > Cách chạy chương trình sử dụng thư viện ngoài thông qua virtual env
+  + Cách chạy chương trình sử dụng thư viện ngoài thông qua virtual env
       ```
       docker container stop test-streaming || true &&
       docker container rm test-streaming || true &&
