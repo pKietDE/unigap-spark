@@ -77,6 +77,6 @@ spark/
   /spark/99-project/test.py"
   ```
   > [!WARNING]
-  > Hãy đứng đúng vị trí của folder khi chạy để không mắc lỗi  <span style="color:##FF0000">not found file.py</span> hoặc  <span style="color:##FF0000">not found folder/span>
+  > Hãy đứng đúng vị trí của folder khi chạy để không mắc lỗi  <span style="color:##FF0000">not found file.py</span> hoặc  <span style="color:##FF0000">not found folder/span> `#0969DA`
   
 
