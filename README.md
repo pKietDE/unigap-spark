@@ -39,7 +39,7 @@ spark/
 </pre>
 
 ## Cách sử dụng
-  ### Cách chạy với kafka
+  _### Cách chạy với kafka_
   **[Link Kafka](https://github.com/pKietDE/kafka-postgres)**
   > [!NOTE]
   > 1. Cài đặt biến môi trường đầy đủ cho file kafka_config.conf
@@ -51,7 +51,7 @@ spark/
 
 
   ### Cách chạy với spark-submit
-  **Cách chạy chương trình sử dụng thư viện ngoài thông qua virtual env**
+  _**Cách chạy chương trình sử dụng thư viện ngoài thông qua virtual env**_
   ```
   docker container stop test-streaming || true &&
   docker container rm test-streaming || true &&
@@ -76,5 +76,7 @@ spark/
   --py-files /spark/99-project/util.zip \
   /spark/99-project/test.py"
   ```
+  > [!WARNING]
+  > Hãy đứng đụng vị trí của folder khi chạy để không mắc lỗi `not found file.py ` hoặc `not found folder `
   
 
