@@ -44,7 +44,7 @@ spark/
   > [!NOTE]
   > 1. Cài đặt biến môi trường đầy đủ cho file kafka_config.conf
   > 2. Chạy dockerfile và docker-compose.yml trong repo này
-  > 3. Cài đặt lại IP External trong Advance Listener nếu sử dụng ` địa chỉ máy khác`
+  > 3. Cài đặt lại IP External trong Advance Listener nếu sử dụng  `#FF0000 địa chỉ máy khác`
   > 4. Chạy file main.py trong repo kafka để tiến hành xử lý.
    
   
@@ -77,6 +77,6 @@ spark/
   /spark/99-project/test.py"
   ```
   > [!WARNING]
-  > Hãy đứng đúng vị trí của folder khi chạy để không mắc lỗi ` not found file.py ` hoặc `not found folder `
+  > Hãy đứng đúng vị trí của folder khi chạy để không mắc lỗi  `#FF0000 not found file.py ` hoặc  `#FF0000not found folder `
   
 
