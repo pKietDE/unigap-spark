@@ -77,6 +77,6 @@ spark/
   /spark/99-project/test.py"
   ```
   > [!WARNING]
-  > Hãy đứng đụng vị trí của folder khi chạy để không mắc lỗi `not found file.py ` hoặc `not found folder `
+  > Hãy đứng đúng vị trí của folder khi chạy để không mắc lỗi ` not found file.py ` hoặc `not found folder `
   
 
