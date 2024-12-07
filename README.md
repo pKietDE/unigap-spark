@@ -43,9 +43,10 @@ spark/
   **[Link Kafka](https://github.com/pKietDE/kafka-postgres)**
   > [!NOTE]
   > 1. Cài đặt biến môi trường đầy đủ cho file kafka_config.conf
-  > 2. Chạy dockerfile và docker-compose.yml trong repo này
-  > 3. Cài đặt lại IP External trong Advance Listener nếu sử dụng <span style="color:red">`địa chỉ máy khác`</span>
-  > 4. Chạy file main.py trong repo kafka để tiến hành xử lý.
+  > 2. Thêm các thư viện cần thiết trong file requirements.txt
+  > 3. Chạy dockerfile và docker-compose.yml trong repo này
+  > 4. Cài đặt lại IP External trong Advance Listener nếu sử dụng <span style="color:red">`địa chỉ máy khác`</span>
+  > 5. Chạy file main.py trong repo kafka để tiến hành xử lý.
    
   
 
@@ -63,8 +64,8 @@ spark/
   -v spark_data:/data \
   -e PYSPARK_DRIVER_PYTHON='python' \
   -e PYSPARK_PYTHON='./environment/bin/python' \
-  -e KAFKA_BOOTSTRAP_SERVERS='34.29.192.39:9094,34.29.192.39:9194,34.29.192.39:9294' \
-  -e KAFKA_SASL_JAAS_CONFIG='org.apache.kafka.common.security.plain.PlainLoginModule required username="kafka" password="UnigapKafka@2024";' \
+  -e KAFKA_BOOTSTRAP_SERVERS='localhost:9094localhost:9194,localhost:9294' \
+  -e KAFKA_SASL_JAAS_CONFIG='org.apache.kafka.common.security.plain.PlainLoginModule required username="" password="";' \
   unigap/spark:3.5 bash -c "python -m venv pyspark_venv &&
   source pyspark_venv/bin/activate &&
   pip install --upgrade pip &&
