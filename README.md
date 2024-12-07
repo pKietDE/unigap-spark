@@ -52,6 +52,7 @@ spark/
 
   ### Cách chạy với spark-submit
   **Cách chạy chương trình sử dụng thư viện ngoài thông qua virtual env**
+  ```
   docker container stop test-streaming || true &&
   docker container rm test-streaming || true &&
   docker run -ti --name test-streaming \
@@ -74,5 +75,6 @@ spark/
   --archives pyspark_venv.tar.gz \
   --py-files /spark/99-project/util.zip \
   /spark/99-project/test.py"
+  ```
   
 
