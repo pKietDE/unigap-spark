@@ -1,4 +1,5 @@
 import logging
+from util.config import *
 
 class ProductWriteProcessor:
     # Cấu hình logging
@@ -13,12 +14,8 @@ class ProductWriteProcessor:
     
     def __init__(self):
         if not hasattr(self, 'postgres_options'):
-            self.postgres_options = {
-                "url": "jdbc:postgresql://34.29.192.39:5432/glamira",
-                "user": "postgres",
-                "password": "UnigapPostgres@123",
-                "driver": "org.postgresql.Driver"
-            }
+            conf = Config()
+            self.postgres_options = conf._get_section_conf("POSTGRES")
 
     
     def write_postgres(self, df, db_table, schema="public"):

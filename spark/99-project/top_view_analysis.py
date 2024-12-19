@@ -67,21 +67,19 @@ class ProductViewProcessor:
     def get_view_product_today(self):
         """ Tính tổng số lượt xem sản phẩm trong ngày hôm nay. """
         return self.fact_view \
-            .filter((f.col("local_time_convert") == self.date_today) & (~f.col("product_id").isNull())) \
+            .filter(~f.col("product_id").isNull()) \
             .groupBy(f.col("product_id")) \
             .agg(f.sum("view_count").alias("view_product_today"))
 
     def get_view_country_today(self):
         """ Tính tổng số lượt xem theo quốc gia trong ngày hôm nay. """
         return self.fact_view \
-            .filter(f.col("local_time_convert") == self.date_today) \
             .groupBy(f.col("country")) \
             .agg(f.sum("view_count").alias("view_country_today"))
 
     def get_referrer_url_today(self):
         """ Tính tổng số lượt xem theo URL giới thiệu trong ngày hôm nay. """
         return self.fact_view \
-            .filter(f.col("local_time_convert") == self.date_today) \
             .groupBy(f.col("referrer")) \
             .agg(f.sum("view_count").alias("view_referrer_today"))
 
@@ -95,7 +93,6 @@ class ProductViewProcessor:
         return self.fact_view \
             .groupBy(f.col("country"), f.col("store_id")) \
             .agg(f.sum("view_count").alias("view_store_in_country")) \
-            .orderBy(f.desc("view_store_in_country"))
 
     def get_product_id_view_day(self):
         """
@@ -115,5 +112,5 @@ class ProductViewProcessor:
     def get_browser_os_view_to_hour(self):
         """ Tính tổng số lượt xem theo trình duyệt, hệ điều hành và theo giờ. """
         return self.fact_view \
-            .groupBy(f.col("browser"), f.col("os"), f.col("hour")) \
+            .groupBy(f.col("browser"), f.col("os"), f.col("hour"), f.col("local_time_convert")) \
             .agg(f.sum("view_count").alias("view_browser_os_to_hour"))
