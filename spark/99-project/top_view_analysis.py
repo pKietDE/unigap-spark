@@ -68,19 +68,19 @@ class ProductViewProcessor:
         """ Tính tổng số lượt xem sản phẩm trong ngày hôm nay. """
         return self.fact_view \
             .filter(~f.col("product_id").isNull()) \
-            .groupBy(f.col("product_id")) \
+            .groupBy(f.col("product_id"),f.col("month"),f.col("day"),f.col("hour"), f.col("local_time_convert")) \
             .agg(f.sum("view_count").alias("view_product_today"))
 
     def get_view_country_today(self):
         """ Tính tổng số lượt xem theo quốc gia trong ngày hôm nay. """
         return self.fact_view \
-            .groupBy(f.col("country")) \
+            .groupBy(f.col("country"),f.col("month"),f.col("day"),f.col("hour"), f.col("local_time_convert")) \
             .agg(f.sum("view_count").alias("view_country_today"))
 
     def get_referrer_url_today(self):
         """ Tính tổng số lượt xem theo URL giới thiệu trong ngày hôm nay. """
         return self.fact_view \
-            .groupBy(f.col("referrer")) \
+            .groupBy(f.col("referrer"),f.col("month"),f.col("day"),f.col("hour"), f.col("local_time_convert")) \
             .agg(f.sum("view_count").alias("view_referrer_today"))
 
     def get_store_view_in_country(self):
@@ -91,7 +91,7 @@ class ProductViewProcessor:
         cho từng cửa hàng trong quốc gia được chỉ định.
         """
         return self.fact_view \
-            .groupBy(f.col("country"), f.col("store_id")) \
+            .groupBy(f.col("country"), f.col("store_id"),f.col("month"),f.col("day"),f.col("hour"), f.col("local_time_convert")) \
             .agg(f.sum("view_count").alias("view_store_in_country")) \
 
     def get_product_id_view_day(self):
@@ -104,7 +104,7 @@ class ProductViewProcessor:
 
         return self.fact_view \
             .filter(~f.col("product_id").isNull()) \
-            .groupBy(f.col("product_id"),f.col("month"),f.col("day"),f.col("hour")) \
+            .groupBy(f.col("product_id"),f.col("month"),f.col("day"),f.col("hour"), f.col("local_time_convert")) \
             .agg(f.sum("view_count").alias("view_product_id_in_day")) \
             .orderBy(f.desc("view_product_id_in_day"))
 
