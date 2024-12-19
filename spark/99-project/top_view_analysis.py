@@ -92,7 +92,7 @@ class ProductViewProcessor:
         """
         return self.fact_view \
             .groupBy(f.col("country"), f.col("store_id"),f.col("month"),f.col("day"),f.col("hour"), f.col("local_time_convert")) \
-            .agg(f.sum("view_count").alias("view_store_in_country")) \
+            .agg(f.sum("view_count").alias("view_store_in_country"))
 
     def get_product_id_view_day(self):
         """
