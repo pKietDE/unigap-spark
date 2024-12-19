@@ -66,12 +66,12 @@ spark/
     -v spark_data:/data \
     -e PYSPARK_DRIVER_PYTHON='python' \
     -e PYSPARK_PYTHON='./environment/bin/python' \
-    -e KAFKA_BOOTSTRAP_SERVERS='34.29.192.39:9094,34.29.192.39:9194,34.29.192.39:9294' \
+    -e KAFKA_BOOTSTRAP_SERVERS='localhost:9094,localhost:9194,localhost:9294' \
     -e KAFKA_SASL_JAAS_CONFIG='org.apache.kafka.common.security.plain.PlainLoginModule required username="kafka" password="UnigapKafka@2024";' \
-    -e POSTGRES_URL='jdbc:postgresql://34.29.192.39:5432/glamira'\
-    -e POSTGRES_USER='postgres'\
-    -e POSTGRES_PASSWORD='UnigapPostgres@123'\
-    -e POSTGRES_DRIVER='org.postgresql.Driver'\
+    -e POSTGRES_URL=''\
+    -e POSTGRES_USER=''\
+    -e POSTGRES_PASSWORD=''\
+    -e POSTGRES_DRIVER=''\
     unigap/spark:3.5 bash -c "python -m venv pyspark_venv &&
     source pyspark_venv/bin/activate &&
     pip install --upgrade pip &&
